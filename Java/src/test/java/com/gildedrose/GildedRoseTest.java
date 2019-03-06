@@ -33,4 +33,12 @@ public class GildedRoseTest {
         assertEquals(0, app.items[0].quality);
     }
 
+    @Test
+    public void shouldNotUpdateSulfurasQuality() {
+        items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 1, 1)};
+        app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(1, app.items[0].quality);
+    }
+
 }
