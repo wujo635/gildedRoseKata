@@ -49,4 +49,9 @@ public class GildedRoseTest {
         assertSuccess(3, new Item("Backstage passes to a TAFKAL80ETC concert", 6, 1));
     }
 
+    @Test
+    public void shouldDisallowQualityGreaterThan50() {
+        assertSuccess(50, new Item("Aged Brie", 1, 50));
+    }
+
 }
