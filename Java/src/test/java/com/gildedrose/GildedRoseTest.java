@@ -44,4 +44,9 @@ public class GildedRoseTest {
         assertSuccess(4, new Item("Backstage passes to a TAFKAL80ETC concert", 1, 1));
     }
 
+    @Test
+    public void shouldIncreaseBackstagePassQualityBy2IfSellByLessThan10AndGreaterThan5() {
+        assertSuccess(3, new Item("Backstage passes to a TAFKAL80ETC concert", 6, 1));
+    }
+
 }
