@@ -39,4 +39,9 @@ public class GildedRoseTest {
         assertSuccess(1, new Item("Sulfuras, Hand of Ragnaros", 1, 1));
     }
 
+    @Test
+    public void shouldIncreaseBackstagePassQualityBy3IfSellByDateLessThan5() {
+        assertSuccess(4, new Item("Backstage passes to a TAFKAL80ETC concert", 1, 1));
+    }
+
 }
