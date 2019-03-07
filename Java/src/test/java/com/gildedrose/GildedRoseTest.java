@@ -54,4 +54,9 @@ public class GildedRoseTest {
         assertSuccess(50, new Item("Aged Brie", 1, 50));
     }
 
+    @Test
+    public void shouldDisallowQualityLessThanZero() {
+        assertSuccess(0, new Item("general", 1, 0));
+    }
+
 }
