@@ -36,7 +36,7 @@ class GildedRose {
                             items[i].quality--;
                         }
                     } else {
-                        items[i].quality = items[i].quality - items[i].quality;
+                        items[i].quality = items[i].quality + items[i].quality;
                     }
                 } else {
                     items[i].quality--;
