@@ -14,9 +14,9 @@ public class GildedRoseTest {
         assertEquals(expectedQuality, app.items[0].quality);
     }
 
-    private void assertSellinSuccess(int expectedSellin, Item item) {
+    private void assertSellInSuccess(int expectedSellIn, Item item) {
         updateAppQuality(item);
-        assertEquals(expectedSellin, app.items[0].sellIn);
+        assertEquals(expectedSellIn, app.items[0].sellIn);
     }
 
     private void updateAppQuality(Item item) {
@@ -73,12 +73,12 @@ public class GildedRoseTest {
 
     @Test
     public void shouldDecreaseSellinDateOnUpdate() {
-        assertSellinSuccess(1, new Item("general", 2, 1));
+        assertSellInSuccess(1, new Item("general", 2, 1));
     }
 
     @Test
     public void shouldNotUpdateSulfurasSellinDate() {
-        assertSellinSuccess(1, new Item("Sulfuras, Hand of Ragnaros", 1, 1));
+        assertSellInSuccess(1, new Item("Sulfuras, Hand of Ragnaros", 1, 1));
     }
 
 }
