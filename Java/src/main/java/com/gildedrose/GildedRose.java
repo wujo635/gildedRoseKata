@@ -45,20 +45,16 @@ class GildedRose {
                     items[i].quality = items[i].quality + 1;
                 }
             }
-            if (isQualityLessThanZero(items[i])) {
-                items[i].quality = 0;
-            }
-            if (isQualityGreaterThan50(items[i])) {
-                items[i].quality = 50;
-            }
+            correctQualityOutOfBounds(items[i]);
         }
     }
 
-    private boolean isQualityGreaterThan50(Item item) {
-        return item.quality > 50;
-    }
-
-    private boolean isQualityLessThanZero(Item item) {
-        return item.quality < 0;
+    private void correctQualityOutOfBounds(Item item) {
+        if (item.quality < 0) {
+            item.quality = 0;
+        }
+        if (item.quality > 50) {
+            item.quality = 50;
+        }
     }
 }
