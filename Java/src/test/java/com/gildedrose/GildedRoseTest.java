@@ -59,4 +59,9 @@ public class GildedRoseTest {
         assertSuccess(0, new Item("general", 1, 0));
     }
 
+    @Test
+    public void shouldSetBackstagePassQualityToZeroAfterConcert() {
+        assertSuccess(0, new Item("Backstage passes to a TAFKAL80ETC concert", 0, 1));
+    }
+
 }
