@@ -25,9 +25,9 @@ class GildedRose {
                 }
             }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+//            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
                 items[i].sellIn--;
-            }
+//            }
 
             if (items[i].sellIn < 0) {
                 if (!items[i].name.equals("Aged Brie")) {
