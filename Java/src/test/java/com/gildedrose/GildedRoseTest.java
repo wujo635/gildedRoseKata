@@ -76,4 +76,9 @@ public class GildedRoseTest {
         assertSellinSuccess(1, new Item("general", 2, 1));
     }
 
+    @Test
+    public void shouldNotUpdateSulfurasSellinDate() {
+        assertSellinSuccess(1, new Item("Sulfuras, Hand of Ragnaros", 1, 1));
+    }
+
 }
