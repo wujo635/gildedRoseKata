@@ -91,4 +91,9 @@ public class GildedRoseTest {
         assertQualitySuccess(3, new Item("general", -1, 5));
     }
 
+    @Test
+    public void shouldIncreaseBackstagePassQualityBy3IfSellInIs5() {
+        assertQualitySuccess(4, new Item("Backstage passes to a TAFKAL80ETC concert", 5, 1));
+    }
+
 }
