@@ -86,4 +86,9 @@ public class GildedRoseTest {
         assertQualitySuccess(2, new Item("Backstage passes to a TAFKAL80ETC concert", 11, 1));
     }
 
+    @Test
+    public void shouldDecreaseGeneralItemQualityTwiceAsFastWhenSellInIsNegative() {
+        assertQualitySuccess(3, new Item("general", -1, 5));
+    }
+
 }
