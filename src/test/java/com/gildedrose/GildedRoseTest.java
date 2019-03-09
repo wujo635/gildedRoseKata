@@ -47,12 +47,12 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void shouldIncreaseBackstagePassQualityBy3IfSellByDateLessThan5() {
+    public void shouldIncreaseBackstagePassQualityBy3IfSellInDateLessThan5() {
         assertQualitySuccess(4, new Item("Backstage passes to a TAFKAL80ETC concert", 1, 1));
     }
 
     @Test
-    public void shouldIncreaseBackstagePassQualityBy2IfSellByLessThan10AndGreaterThan5() {
+    public void shouldIncreaseBackstagePassQualityBy2IfSellInLessThan10AndGreaterThan5() {
         assertQualitySuccess(3, new Item("Backstage passes to a TAFKAL80ETC concert", 6, 1));
     }
 
@@ -79,6 +79,11 @@ public class GildedRoseTest {
     @Test
     public void shouldNotUpdateSulfurasSellinDate() {
         assertSellInSuccess(1, new Item("Sulfuras, Hand of Ragnaros", 1, 1));
+    }
+
+    @Test
+    public void shouldIncreaseBackstagePassQualityBy1IfSellInGreaterThan10() {
+        assertQualitySuccess(2, new Item("Backstage passes to a TAFKAL80ETC concert", 11, 1));
     }
 
 }
