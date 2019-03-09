@@ -14,7 +14,7 @@ class GildedRose {
                 item.sellIn--;
             } else if (isBackstagePass(item)) {
                 if (item.sellIn > 0) {
-                    item.quality += 1 + Math.ceil(1 + Math.max(0, (10 - item.sellIn) / 5));
+                    item.quality += 3 - item.sellIn / 5;
                 } else {
                     item.quality = 0;
                 }
