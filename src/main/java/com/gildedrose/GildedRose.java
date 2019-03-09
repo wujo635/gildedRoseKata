@@ -8,41 +8,42 @@ class GildedRose {
     }
 
     public void updateQuality() {
-        for (Item item:items) {
-            if (!isSpecialItem(item)) {
-                item.quality--;
-            } else if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
+        for (Item item : items) {
+            if (isAgedBrie(item)) {
                 item.quality++;
-                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
-                    if (item.sellIn < 6) {
-                        item.quality += 2;
-                    } else if (item.sellIn < 11) {
-                        item.quality++;
-                    }
-                }
-            }
-            updateSellIn(item);
-            if (item.sellIn < 0) {
-                if (!isSpecialItem(item)) {
-                    item.quality--;
-                }
-                if (item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                item.sellIn--;
+            } else if (isBackstagePass(item)) {
+                if (item.sellIn > 10) {
+                    item.quality++;
+                } else if (item.sellIn > 5) {
+                    item.quality += 2;
+                } else if (item.sellIn > 0) {
+                    item.quality += 3;
+                } else {
                     item.quality = 0;
+                }
+                item.sellIn--;
+            } else if (!isSulfuras(item)) {
+                item.quality--;
+                item.sellIn--;
+                if (item.sellIn < 0) {
+                    item.quality--;
                 }
             }
             correctQualityOutOfBounds(item);
         }
     }
 
-    private void updateSellIn(Item item) {
-        if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-            item.sellIn--;
-        }
+    private boolean isSulfuras(Item item) {
+        return item.name.equals("Sulfuras, Hand of Ragnaros");
     }
 
-    private boolean isSpecialItem(Item item) {
-        return (item.name.equals("Aged Brie") || item.name.equals("Backstage passes to a TAFKAL80ETC concert")
-                || item.name.equals("Sulfuras, Hand of Ragnaros"));
+    private boolean isBackstagePass(Item item) {
+        return item.name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
+    private boolean isAgedBrie(Item item) {
+        return item.name.equals("Aged Brie");
     }
 
     private void correctQualityOutOfBounds(Item item) {
