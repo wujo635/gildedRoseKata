@@ -30,7 +30,7 @@ class GildedRose {
 
     private void updateBackstagePass(Item item) {
         if (item.sellIn > 0) {
-            item.quality += 3 - item.sellIn / 5;
+            item.quality += 3 - Math.min(2, item.sellIn / 5);
         } else {
             item.quality = 0;
         }
