@@ -13,12 +13,8 @@ class GildedRose {
                 item.quality++;
                 item.sellIn--;
             } else if (isBackstagePass(item)) {
-                if (item.sellIn > 10) {
-                    item.quality++;
-                } else if (item.sellIn > 5) {
-                    item.quality += 2;
-                } else if (item.sellIn > 0) {
-                    item.quality += 3;
+                if (item.sellIn > 0) {
+                    item.quality += 1 + Math.ceil(1 + Math.max(0, (10 - item.sellIn) / 5));
                 } else {
                     item.quality = 0;
                 }
