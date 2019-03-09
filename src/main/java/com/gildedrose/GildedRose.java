@@ -21,11 +21,8 @@ class GildedRose {
     }
 
     private void updateGenericItem(Item item) {
-        item.quality--;
+        item.quality -= (item.sellIn > 0) ? 1 : 2;
         item.sellIn--;
-        if (item.sellIn < 0) {
-            item.quality--;
-        }
     }
 
     private void updateBackstagePass(Item item) {
