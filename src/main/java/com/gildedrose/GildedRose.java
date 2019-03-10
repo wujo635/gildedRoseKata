@@ -14,6 +14,9 @@ class GildedRose {
             } else if (isBackstagePass(item)) {
                 updateBackstagePass(item);
             } else if (!isSulfuras(item)) {
+                if (item.name.matches("\\A(Conjured)\\s.*\\z")) {
+                    item.quality--;
+                }
                 updateGenericItem(item);
             }
             correctQualityOutOfBounds(item);
