@@ -47,7 +47,7 @@ class GildedRose {
     }
 
     private boolean isConjuredItem(Item item) {
-        return item.name.matches("\\A(Conjured)\\s.*\\z");
+        return item.name.equals("Conjured Item");
     }
 
     private boolean isSulfuras(Item item) {

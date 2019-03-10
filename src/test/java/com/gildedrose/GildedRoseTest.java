@@ -98,7 +98,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldDecreaseConjuredItemBy2OnUpdate() {
-        assertQualitySuccess(1, new Item("Conjured item", 1, 3));
+        assertQualitySuccess(1, new Item("Conjured Item", 1, 3));
     }
 
 }
