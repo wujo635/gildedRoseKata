@@ -14,7 +14,7 @@ class GildedRose {
             } else if (isBackstagePass(item)) {
                 updateBackstagePass(item);
             } else if (!isSulfuras(item)) {
-                if (item.name.matches("\\A(Conjured)\\s.*\\z")) {
+                if (isConjuredItem(item)) {
                     item.quality--;
                 }
                 updateGenericItem(item);
@@ -44,6 +44,10 @@ class GildedRose {
     private void updateAgedBrie(Item item) {
         item.quality++;
         item.sellIn--;
+    }
+
+    private boolean isConjuredItem(Item item) {
+        return item.name.matches("\\A(Conjured)\\s.*\\z");
     }
 
     private boolean isSulfuras(Item item) {
