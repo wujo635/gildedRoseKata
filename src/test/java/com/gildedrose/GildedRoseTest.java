@@ -38,7 +38,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldDecreaseGeneralItemQualityOnUpdate() {
-        assertQualitySuccess(0, new Item("general", 1, 1));
+        assertQualitySuccess(0, new Item("General Item", 1, 1));
     }
 
     @Test
@@ -63,7 +63,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldDisallowQualityLessThanZero() {
-        assertQualitySuccess(0, new Item("general", 1, 0));
+        assertQualitySuccess(0, new Item("General Item", 1, 0));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class GildedRoseTest {
 
     @Test
     public void shouldDecreaseSellinDateOnUpdate() {
-        assertSellInSuccess(1, new Item("general", 2, 1));
+        assertSellInSuccess(1, new Item("General Item", 2, 1));
     }
 
     @Test
@@ -88,12 +88,17 @@ public class GildedRoseTest {
 
     @Test
     public void shouldDecreaseGeneralItemQualityTwiceAsFastWhenSellInIsNegative() {
-        assertQualitySuccess(3, new Item("general", -1, 5));
+        assertQualitySuccess(3, new Item("General Item", -1, 5));
     }
 
     @Test
     public void shouldIncreaseBackstagePassQualityBy3IfSellInIs5() {
         assertQualitySuccess(4, new Item("Backstage passes to a TAFKAL80ETC concert", 5, 1));
+    }
+
+    @Test
+    public void shouldDecreaseConjuredItemBy2OnUpdate() {
+        assertQualitySuccess(1, new Item("Conjured item", 1, 3));
     }
 
 }
