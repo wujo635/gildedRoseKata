@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+import com.gildedrose.itemUpdater.AgedBrieUpdater;
+import com.gildedrose.itemUpdater.ItemUpdater;
+
 class GildedRose {
     Item[] items;
 
@@ -8,9 +11,12 @@ class GildedRose {
     }
 
     public void updateQuality() {
+        ItemUpdater updater;
         for (Item item : items) {
             if (isAgedBrie(item)) {
-                updateAgedBrie(item);
+//                updateAgedBrie(item);
+                updater = new AgedBrieUpdater();
+                updater.update(item);
             } else if (isBackstagePass(item)) {
                 updateBackstagePass(item);
             } else if (!isSulfuras(item)) {
