@@ -66,14 +66,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void shouldDecreaseConjuredItemBy2OnUpdate() {
-        this.items = new Item[]{new Item("Conjured Item", 1, 3)};
-        this.app = new GildedRose(items);
-        this.app.updateQuality();
-        assertEquals(1, app.items[0].quality);
-    }
-
-    @Test
     public void shouldUpdateAgedBrie() {
         this.items = new Item[]{new Item("Aged Brie", 1, 1)};
         this.app = new GildedRose(items);

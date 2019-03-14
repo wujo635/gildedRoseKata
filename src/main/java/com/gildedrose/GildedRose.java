@@ -1,9 +1,6 @@
 package com.gildedrose;
 
-import com.gildedrose.itemUpdater.AgedBrieUpdater;
-import com.gildedrose.itemUpdater.BackstagePassUpdater;
-import com.gildedrose.itemUpdater.ItemUpdater;
-import com.gildedrose.itemUpdater.SulfurasUpdater;
+import com.gildedrose.itemUpdater.*;
 
 class GildedRose {
     Item[] items;
@@ -27,8 +24,8 @@ class GildedRose {
                 updater = new SulfurasUpdater();
                 updater.update(item);
             } else if (isConjuredItem(item)) {
-                item.quality--;
-                updateGenericItem(item);
+                updater = new ConjuredItemUpdater();
+                updater.update(item);
             } else {
                 updateGenericItem(item);
             }
