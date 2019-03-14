@@ -32,7 +32,9 @@ class GildedRose {
             } else {
                 updateGenericItem(item);
             }
-            correctQualityOutOfBounds(item);
+            if (!isSulfuras(item)) {
+                correctQualityOutOfBounds(item);
+            }
         }
     }
 
