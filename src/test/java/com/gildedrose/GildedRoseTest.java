@@ -89,4 +89,12 @@ public class GildedRoseTest {
         assertEquals(2, app.items[0].quality);
     }
 
+    @Test
+    public void shouldUpdateBackstagePass() {
+        this.items = new Item[]{new Item("Backstage passes to a TAFKAL80ETC concert", 1, 1)};
+        this.app = new GildedRose(items);
+        this.app.updateQuality();
+        assertEquals(4, app.items[0].quality);
+    }
+
 }
