@@ -16,5 +16,6 @@ public class BackstagePassUpdater extends ItemUpdater {
             item.quality = 0;
         }
         item.sellIn--;
+        correctQualityOutOfBounds(item);
     }
 }

@@ -7,5 +7,6 @@ public class ConjuredItemUpdater extends ItemUpdater {
     public void update(Item item) {
         item.quality -= 2;
         item.sellIn--;
+        correctQualityOutOfBounds(item);
     }
 }

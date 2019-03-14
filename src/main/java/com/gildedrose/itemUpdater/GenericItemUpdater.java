@@ -11,5 +11,6 @@ public class GenericItemUpdater extends ItemUpdater {
             item.quality--;
         }
         item.sellIn--;
+        correctQualityOutOfBounds(item);
     }
 }

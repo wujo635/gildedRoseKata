@@ -24,9 +24,6 @@ class GildedRose {
                 updater = new GenericItemUpdater();
             }
             updater.update(item);
-            if (!isSulfuras(item)) {
-                correctQualityOutOfBounds(item);
-            }
         }
     }
 
@@ -46,7 +43,4 @@ class GildedRose {
         return item.name.equals("Aged Brie");
     }
 
-    private void correctQualityOutOfBounds(Item item) {
-        item.quality = Math.min(Math.max(item.quality, 0), 50);
-    }
 }

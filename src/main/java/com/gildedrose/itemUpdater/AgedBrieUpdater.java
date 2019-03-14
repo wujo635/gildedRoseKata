@@ -8,6 +8,7 @@ public class AgedBrieUpdater extends ItemUpdater {
     public void update(Item item) {
         item.quality++;
         item.sellIn--;
+        correctQualityOutOfBounds(item);
     }
 
 }
