@@ -16,4 +16,10 @@ public class AgedBrieUpdaterTest {
         assertEquals(2, item.quality);
     }
 
+    @Test
+    public void shouldDisallowQualityGreaterThan50() {
+        Item item = new Item("Aged Brie", 1, 50);
+        updater.update(item);
+        assertEquals(50, item.quality);
+    }
 }
