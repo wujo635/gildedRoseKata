@@ -89,4 +89,11 @@ public class GildedRoseTest {
         assertEquals(4, app.items[0].quality);
     }
 
+    @Test
+    public void shouldUpdateSulfuras() {
+        this.items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 1, 1)};
+        this.app = new GildedRose(items);
+        this.app.updateQuality();
+        assertEquals(80, app.items[0].quality);
+    }
 }
