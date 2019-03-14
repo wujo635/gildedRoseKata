@@ -88,4 +88,12 @@ public class GildedRoseTest {
         this.app.updateQuality();
         assertEquals(80, app.items[0].quality);
     }
+
+    @Test
+    public void shouldUpdateConjuredItem() {
+        this.items = new Item[]{new Item("Conjured Item", 1, 2)};
+        this.app = new GildedRose(items);
+        this.app.updateQuality();
+        assertEquals(0, app.items[0].quality);
+    }
 }
