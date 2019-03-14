@@ -13,22 +13,17 @@ class GildedRose {
         ItemUpdater updater;
         for (Item item : items) {
             if (isAgedBrie(item)) {
-//                updateAgedBrie(item);
                 updater = new AgedBrieUpdater();
-                updater.update(item);
             } else if (isBackstagePass(item)) {
-//                updateBackstagePass(item);
                 updater = new BackstagePassUpdater();
-                updater.update(item);
             } else if (isSulfuras(item)) {
                 updater = new SulfurasUpdater();
-                updater.update(item);
             } else if (isConjuredItem(item)) {
                 updater = new ConjuredItemUpdater();
-                updater.update(item);
             } else {
-                updateGenericItem(item);
+                updater = new GenericItemUpdater();
             }
+            updater.update(item);
             if (!isSulfuras(item)) {
                 correctQualityOutOfBounds(item);
             }

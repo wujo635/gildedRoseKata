@@ -18,14 +18,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void shouldDecreaseGeneralItemQualityOnUpdate() {
-        this.items = new Item[]{new Item("General Item", 1, 1)};
-        this.app = new GildedRose(items);
-        this.app.updateQuality();
-        assertEquals(0, app.items[0].quality);
-    }
-
-    @Test
     public void shouldDisallowQualityGreaterThan50() {
         this.items = new Item[]{new Item("Aged Brie", 1, 50)};
         this.app = new GildedRose(items);
