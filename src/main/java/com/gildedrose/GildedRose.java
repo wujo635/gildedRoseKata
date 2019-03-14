@@ -3,6 +3,7 @@ package com.gildedrose;
 import com.gildedrose.itemUpdater.AgedBrieUpdater;
 import com.gildedrose.itemUpdater.BackstagePassUpdater;
 import com.gildedrose.itemUpdater.ItemUpdater;
+import com.gildedrose.itemUpdater.SulfurasUpdater;
 
 class GildedRose {
     Item[] items;
@@ -22,10 +23,13 @@ class GildedRose {
 //                updateBackstagePass(item);
                 updater = new BackstagePassUpdater();
                 updater.update(item);
-            } else if (!isSulfuras(item)) {
-                if (isConjuredItem(item)) {
-                    item.quality--;
-                }
+            } else if (isSulfuras(item)) {
+                updater = new SulfurasUpdater();
+                updater.update(item);
+            } else if (isConjuredItem(item)) {
+                item.quality--;
+                updateGenericItem(item);
+            } else {
                 updateGenericItem(item);
             }
             correctQualityOutOfBounds(item);

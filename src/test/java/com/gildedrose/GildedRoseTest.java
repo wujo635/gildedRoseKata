@@ -26,14 +26,6 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void shouldNotUpdateSulfurasQuality() {
-        this.items = new Item[]{new Item("Sulfuras, Hand of Ragnaros", 1, 1)};
-        this.app = new GildedRose(items);
-        this.app.updateQuality();
-        assertEquals(1, app.items[0].quality);
-    }
-
-    @Test
     public void shouldDisallowQualityGreaterThan50() {
         this.items = new Item[]{new Item("Aged Brie", 1, 50)};
         this.app = new GildedRose(items);
